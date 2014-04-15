@@ -1,0 +1,61 @@
+html, body, div, img, span, h1, h2, h3, h4, p, ol, ul, li {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  text-align: left;
+  font-weight: normal;
+  vertical-align: baseline;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+li {list-style-position: inside;}
+
+body {
+  background-image: url(http://subtlepatterns.com/patterns/carbon_fibre.png);
+  font-family: 'Quantico', sans-serif;
+  color: #D5DBD8;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Russo One', sans-serif;
+  margin: 5px 0 10px 0;
+}
+
+
+#wrapper {
+  margin: 65px auto 5% auto;
+  padding: 2%;
+  width: 80%;
+  border-radius: 10px;
+  background-image: url(http://subtlepatterns.com/patterns/micro_carbon.png);
+}
+
+/* NAV */
+nav {
+  background-image: url(http://subtlepatterns.com/patterns/micro_carbon.png);
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: #FFFFF3;
+}
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color: #D72C8C;
+}
+
+.navbar-default .navbar-toggle {
+  border-color: #D72C8C;
+}
+
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+  background-color: #D72C8C;
+}
+
+.navbar-default, .navbar-default .navbar-collapse, .navbar-default .navbar-form {
+  border-color: #D72C8C;
+}
