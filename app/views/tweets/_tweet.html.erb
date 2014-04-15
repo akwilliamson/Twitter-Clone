@@ -1,0 +1,5 @@
+<div class="tweet-display">
+    <%= @tweet.message %>
+    <span class="tweet-time">Tweeted <%= time_ago_in_words(@tweet.created_at) %> ago</span>
+    <div class="clear"></div>
+</div>

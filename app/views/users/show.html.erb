@@ -1,5 +1,22 @@
-<h1><%= @user.name %></h1>
-<%= image_tag @user.avatar(:thumb) %>
+<div class="row">
+
+  <div class="col-md-3">
+    <h1><%= @user.name %></h1>
+    <%= image_tag @user.avatar(:thumb) %>
+  </div>
+  <div class="col-md-6">
+    <%= form_for [@user, @tweet], :role => 'form', :remote => true do |f| %>
+      <div class="form-group">
+        <%= f.label :name, 'New Tweet:', class: 'sr-only' %>
+        <%= f.text_area :message, placeholder: 'New Tweet', class: 'form-control' %>
+      </div>
+      <%= f.submit 'Submit', class: 'btn btn-primary' %>
+    <% end %>
+  </div>
+</div>
+
+<div class="clear"></div>
+<hr>
 <div class="row">
   <div class="col-md-6">
     <div id="my-tweets">
@@ -7,6 +24,8 @@
       <% @tweets.each do |tweet| %>
         <div class="tweet-display">
           <%= tweet.message %>
+          <span class="tweet-time">Tweeted <%= time_ago_in_words(tweet.created_at) %> ago</span>
+          <div class="clear"></div>
         </div>
       <% end %>
     </div>

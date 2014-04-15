@@ -35,6 +35,8 @@ h1, h2, h3, h4, h5 {
   background-image: url(http://subtlepatterns.com/patterns/micro_carbon.png);
 }
 
+.clear {clear:both;}
+
 /* NAV */
 nav {
   background-image: url(http://subtlepatterns.com/patterns/micro_carbon.png);
@@ -58,4 +60,28 @@ nav {
 
 .navbar-default, .navbar-default .navbar-collapse, .navbar-default .navbar-form {
   border-color: #D72C8C;
+}
+
+
+/* USER PROFILE */
+#user-info {
+  float: left;
+
+}
+
+#new-user-tweet {
+  float: left
+}
+
+.tweet-display {
+  padding: 5px;
+  border: 1px solid #87EBE8;
+  border-radius: 5px;
+  margin: 5px 0;
+}
+
+.tweet-time {
+  float: right;
+  font-size: 10px;
+  color: #F74C4D;
 }
