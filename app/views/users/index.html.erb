@@ -1,0 +1,27 @@
+
+<div id="user-list">
+  <% @users.each do |user| %>
+    <div class="display-user-tweets col-md-7">
+      <%= link_to user.name, user_path(user) %>
+      <% if current_user %>
+      <% if @leaders.include?(user.id) %>
+        <%= link_to 'Unfollow', user_follower_path(user, current_user), method: 'delete', class: 'follow-user' %>
+      <% else %>
+        <%= link_to 'Follow', user_followers_path(user, :follower_id => current_user.id), method: 'post', class: 'follow-user' %>
+      <% end %>
+      <% end %>
+      <%
+        user_tweets_length = user.tweets.length
+        if user_tweets_length > 3 ? user_tweets_length = 3 : user_tweets_length = user_tweets_length
+      %>
+        <% user.tweets[-user_tweets_length,user_tweets_length].each do |tweet| %>
+          <div class="tweet-display">
+            <%= tweet.message %>
+            <span class="tweet-time">Tweeted <%= time_ago_in_words(tweet.created_at) %> ago</span>
+            <div class="clear"></div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  <% end %>
+</div>

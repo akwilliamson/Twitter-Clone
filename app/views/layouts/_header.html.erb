@@ -14,7 +14,7 @@
             <ul class="nav navbar-nav navbar-right">
               <% if current_user %>
                <li><%= link_to current_user.name, user_path(current_user) %></li>
-               <li><a href="<%# new_user_tweet_path(current_user) %>"><span class="glyphicon glyphicon-plus"></span> Add Tweet</a></li>
+               <li><a href="javascript:void(0);" data-toggle="modal" data-target="#newTweet" ><span class="glyphicon glyphicon-plus"></span> Add Tweet</a></li>
                <li></li>
                <li><%= link_to 'Logout', session_path('current'), method: 'delete' %></li>
               <% else %>

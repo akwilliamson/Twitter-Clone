@@ -1,5 +1,10 @@
 class TweetsController < ApplicationController
-  skip_before_action :must_login,  only: [:index, :new]
+
+
+  def index
+
+  end
+
   def create
     @user = User.find(params[:user_id])
     @tweet = @user.tweets.create(tweet_params)

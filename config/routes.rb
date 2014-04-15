@@ -7,6 +7,7 @@ Twitter::Application.routes.draw do
 
   resources :users do
     resources :tweets
+    resources :followers, :only => [:create, :destroy]
   end
 
   resources :sessions

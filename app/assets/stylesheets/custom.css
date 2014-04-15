@@ -26,6 +26,9 @@ h1, h2, h3, h4, h5 {
   margin: 5px 0 10px 0;
 }
 
+h1 { color: #87EBE8; }
+h3 { color: #F74C4D; }
+
 
 #wrapper {
   margin: 65px auto 5% auto;
@@ -36,6 +39,12 @@ h1, h2, h3, h4, h5 {
 }
 
 .clear {clear:both;}
+
+hr {
+  color: #023138;
+  background-color: #023138;
+  border-color: #023138;
+}
 
 /* NAV */
 nav {
@@ -74,14 +83,34 @@ nav {
 }
 
 .tweet-display {
-  padding: 5px;
+  padding: 5px 10px;
   border: 1px solid #87EBE8;
   border-radius: 5px;
   margin: 5px 0;
+  background-color: #015471;
+  color: #ffffff;
 }
 
 .tweet-time {
   float: right;
   font-size: 10px;
-  color: #F74C4D;
+  color: #D72C8C;
+  opacity: .8;
+}
+
+.display-user-tweets {
+  margin: 5px 0;
+  padding:10px;
+  border: 1px solid #D72C8C;
+  border-radius: 5px;
+  background-color: #023138;
+}
+
+.display-user-tweets a {
+  color: #D72C8C;
+}
+
+.follow-user {
+  float:right ;
+  color: white !important;
 }
