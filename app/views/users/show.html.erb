@@ -5,13 +5,15 @@
     <%= image_tag @user.avatar(:thumb) %>
   </div>
   <div class="col-md-6">
-    <%= form_for [@user, @tweet], :role => 'form', :remote => true, :multipart => true do |f| %>
-      <div class="form-group">
-        <%= f.label :name, 'New Tweet:', class: 'sr-only' %>
-        <%= f.text_area :message, placeholder: 'New Tweet', class: 'form-control' %>
-      </div>
-      <%= f.submit 'Submit', class: 'btn btn-primary' %>
-    <% end %>
+      <%= form_for [@user, @tweet], :role => 'form', :remote => true, :multipart => true do |f| %>
+        <div class="form-group">
+          <%= f.label :name, 'New Tweet:', class: 'sr-only' %>
+          <%= f.text_area :message, placeholder: 'New Tweet', class: 'form-control' %>
+        </div>
+        <%= f.submit 'Submit', class: 'btn btn-primary' %>
+      <% end %>
+        <% if current_user == @user %>
+<% end %>
   </div>
 </div>
 
@@ -33,15 +35,29 @@
 
   <div class="col-md-6">
     <h3>My Feed</h3>
-
-    <% @feed_tweets.reverse.each do |tweet| %>
-      <div class="tweet-display">
-          <%= tweet.message %>
-          <span class="tweet-time">Tweeted <%= time_ago_in_words(tweet.created_at) %> ago by <%= tweet.user.name %></span>
-          <div class="clear"></div>
-        </div>
-    <% end %>
+      <% @feed_tweets.reverse.each do |tweet| %>
+        <div class="tweet-display">
+            <%= tweet.message %>
+            <span class="tweet-time">Tweeted <%= time_ago_in_words(tweet.created_at) %> ago by <%= tweet.user.name %></span>
+            <div class="clear"></div>
+          </div>
+      <% end %>
   </div>
+
+  <div class="col-md-6">
+    <h3>My Mentions</h3>
+      <% @feed_tweets.reverse.each do |tweet| %>
+        <% if tweet.message_split(tweet.message) %>
+          <div class="tweet-display">
+              <%= tweet.message %>
+              <span class="tweet-time">Tweeted <%= time_ago_in_words(tweet.created_at) %> ago by <%= tweet.user.name %></span>
+              <div class="clear"></div>
+            </div>
+        <% end %>
+      <% end %>
+  </div>
+
+
 
 </div>
 

@@ -3,7 +3,7 @@ Twitter::Application.routes.draw do
   get 'login', to: 'sessions#new', as: 'login'
   get 'logout', to: 'users#destroy', as: 'logout'
 
-  root :to => 'tweets#index'
+  root :to => 'users#index'
 
   resources :users do
     resources :tweets
